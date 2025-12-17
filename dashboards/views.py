@@ -1,7 +1,9 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from blogs.models import Blog, Category
 from django.contrib.auth.decorators import login_required
-from dashboards.forms import CategoryForm
+from dashboards.forms import BlogPostForm, CategoryForm
+from django.template.defaultfilters import slugify
+
 
 
 @login_required(login_url='login')
@@ -54,3 +56,69 @@ def delete_category(request, pk):
     category = get_object_or_404(Category, pk=pk)
     category.delete()
     return redirect('categories')
+
+
+
+def posts(request):
+    posts = Blog.objects.all()
+    context = {
+        'posts' : posts,
+    }
+    return render(request, 'dashboard/posts.html', context)
+
+
+
+def add_post(request):
+    if request.method == 'POST':
+        form = BlogPostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            
+            # Set temporary slug to prevent IntegrityError
+            post.slug = slugify(form.cleaned_data['title'])
+            
+            # Save to generate post.id
+            post.save() 
+
+            # Update with ID for guaranteed uniqueness
+            post.slug = f"{post.slug}-{post.id}"
+            post.save() 
+            
+            return redirect('posts')
+        else:
+            print(form.errors)
+    else:
+        # This handles the GET request (when user first arrives)
+        form = BlogPostForm()
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'dashboard/add_post.html', context)
+
+
+
+def edit_post(request, pk):
+    post = get_object_or_404(Blog, pk=pk)
+    if request.method == 'POST':
+        form = BlogPostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            post = form.save()
+            title = form.cleaned_data['title']
+            post.slug = slugify(title) + '-'+str(post.id)
+            post.save()
+            return redirect('posts')
+
+    form = BlogPostForm(instance=post)
+    context = {
+        'form' : form,
+        'post' : post,
+    }
+    return render(request, 'dashboard/edit_post.html', context)
+
+
+def delete_post(request, pk):
+    post = get_object_or_404(Blog, pk=pk)
+    post.delete()
+    return redirect('posts')
