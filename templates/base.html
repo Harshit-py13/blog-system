@@ -15,6 +15,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
+<body data-bs-theme="dark">
+    <div class="form-check form-switch mx-4">
+      <input
+        class="form-check-input p-2"
+        type="checkbox"
+        role="switch"
+        id="flexSwitchCheckChecked"
+        checked
+        onclick="myFunction()"
+      />
+    </div>
+
+    <script>
+      function myFunction() {
+        var element = document.body;
+        element.dataset.bsTheme =
+          element.dataset.bsTheme == "light" ? "dark" : "light";
+      }
+    </script>
+</body>
+
+
 <body>
     <div class="container">
         <header class="blog-header py-3">
