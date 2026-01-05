@@ -36,11 +36,9 @@ A full-stack **Django-based Blog & News Management System** that allows users to
 ---
 
 ## 📸 Screenshots
+![Uploading image.png…]()
 
-- Home Page with Latest News  
-- Category-wise Post Listing  
-- Single Post View with Comments  
-- Admin Dashboard  
+  
 
 _(Screenshots available in the repository)_
 
