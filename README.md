@@ -1,4 +1,4 @@
-<img width="1755" height="1617" alt="image" src="https://github.com/user-attachments/assets/1ebecf22-742d-4563-ae51-cb3c239b3a96" /><img width="1755" height="1617" alt="image" src="https://github.com/user-attachments/assets/33715d28-941d-445f-b1cc-571f17564f8d" />📰 Django Blog / News Management System
+📰 Django Blog / News Management System
 
 A full-stack **Django-based Blog & News Management System** that allows users to read articles by category, search posts, and interact through comments. It also includes an **admin dashboard** for managing posts and categories efficiently.
 
