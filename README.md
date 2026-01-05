@@ -1,77 +1,80 @@
-Django Blog News System
-A full-stack, dynamic blogging and news platform built with Django. This project features category-based content management, a robust search engine, and a secure user interaction system.
+# 📰 Django Blog / News Management System
 
-Live Demo: https://Harshit12.pythonanywhere.com
+A full-stack **Django-based Blog & News Management System** that allows users to read articles by category, search posts, and interact through comments. It also includes an **admin dashboard** for managing posts and categories efficiently.
 
-🚀 Features
+---
 
-Dynamic Categorization: Automatically filters and serves blog posts based on taxonomies like Sports, Politics, Technology, etc.
-+1
+## 🚀 Features
 
+### 👤 User Features
+- 📄 View blog/news articles with images
+- 🔍 Search posts by keywords
+- 🗂️ Browse posts by categories (Sports, Politics, Technology, Science, Health, Business)
+- 💬 Add comments on posts
+- 📅 Display post publish date and author
+- 📱 Responsive UI using Bootstrap
 
-Advanced Search: Built using Django Q objects to perform complex, multi-field queries across titles and content.
+### 🛠️ Admin / Dashboard Features
+- 🔐 User authentication (Login / Logout)
+- 📊 Admin dashboard overview
+- 🗂️ Create, update, and delete categories
+- 📝 Create, edit, and delete posts
+- 🖼️ Upload images for posts
+- 👥 Manage users
 
+---
 
-User Engagement: Integrated authentication system allowing users to register, login, and leave comments on posts.
-+1
+## 🖥️ Tech Stack
 
+- **Backend:** Django (Python)
+- **Frontend:** HTML, CSS, Bootstrap
+- **Database:** SQLite3
+- **Authentication:** Django built-in auth system
+- **Version Control:** Git & GitHub
+- **Deployment:** PythonAnywhere *(can be extended to AWS / Render / Railway)*
 
-Production Ready: Fully deployed on PythonAnywhere with configured HTTPS security and static/media file handling.
+---
 
+## 📸 Screenshots
 
-Responsive UI: Designed with Bootstrap 5 for a seamless experience on both mobile and desktop devices.
-+1
+- Home Page with Latest News  
+- Category-wise Post Listing  
+- Single Post View with Comments  
+- Admin Dashboard  
 
-🛠️ Tech Stack
+_(Screenshots available in the repository)_
 
-Backend: Python 3.13, Django.
-+2
+---
 
+## ⚙️ Installation & Setup (Local)
 
-Frontend: HTML5, CSS3, Bootstrap 5.
-+1
+1. **Clone the repository**
+   
+   git clone https://github.com/Harshit-py13/blog-system.git
+   cd blog-system
+   
+2. Create & activate virtual environment
 
+python -m venv env
+env\Scripts\activate   # Windows
 
-Database: SQLite3.
-
-
-Deployment: PythonAnywhere.
-
-📦 Installation & Setup
-Clone the repository:
-
-Bash
-
-git clone https://github.com/Harshit-py13/blog-system.git
-cd blog-system
-Create and activate a virtual environment:
-
-Bash
-
-# For Windows
-python -m venv venv
-.\venv\Scripts\activate
-
-# For Mac/Linux
-python3 -m venv venv
-source venv/bin/activate
-Install dependencies:
-
-Bash
+3. Install dependencies
 
 pip install -r requirements.txt
-Run migrations and start the server:
 
-Bash
+4. Run migrations
 
+python manage.py makemigrations
 python manage.py migrate
+
+5. Create superuser
+
+python manage.py createsuperuser
+
+6. Run the server
+
 python manage.py runserver
-🔒 Security & Optimization
 
-Environment Variables: Configured to automatically toggle DEBUG settings between Local and Production environments.
+7. Open in browser:
 
-
-Error Handling: Implemented custom 404 error pages to improve site reliability and user experience.
-
-
-Security: Enforced Force HTTPS and secure static file mapping for production.
+http://127.0.0.1:8000/
