@@ -26,10 +26,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('category/', include('blogs.urls')),
-    path('blogs/<slug:slug>/', BlogsView.blogs, name='blogs'),
 
     # Search urls
     path('blogs/search/', BlogsView.search, name='search'),
+    path('blogs/<slug:slug>/', BlogsView.blogs, name='blogs'),
     # Login and Register urls
     path('register/', views.register, name='register'),
     path('login/', views.login, name='login'),
