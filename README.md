@@ -1,4 +1,4 @@
-# 📰 Django Blog / News Management System
+<img width="1755" height="1617" alt="image" src="https://github.com/user-attachments/assets/382b4db2-5c50-4b69-8a99-e791f38dc986" /># 📰 Django Blog / News Management System
 
 A full-stack **Django-based Blog & News Management System** that allows users to read articles by category, search posts, and interact through comments. It also includes an **admin dashboard** for managing posts and categories efficiently.
 
@@ -32,17 +32,6 @@ A full-stack **Django-based Blog & News Management System** that allows users to
 - **Authentication:** Django built-in auth system
 - **Version Control:** Git & GitHub
 - **Deployment:** PythonAnywhere *(can be extended to AWS / Render / Railway)*
-
----
-
-## 📸 Screenshots
-![Uploading image.png…]()
-
-  
-
-_(Screenshots available in the repository)_
-
----
 
 ## ⚙️ Installation & Setup (Local)
 
